@@ -25,4 +25,4 @@
           echo 9. How is the disc laid out?
           df
           echo 10. What environment variables are avaialable?
-          env
+          env > /home/runner/work/getting-started-github-actions/abcd_env.txt
