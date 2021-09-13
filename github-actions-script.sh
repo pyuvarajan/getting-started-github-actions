@@ -26,6 +26,8 @@
           df
           echo 10. What environment variables are avaialable?
           env > env_vars_v1.txt
+          git config --global user.email "kannankvs@gmail.com"
+          git config --global user.name "Kannan KVS"
           git add env_vars_v1.txt
           git commit -m "first version of redirected file"
           git push
