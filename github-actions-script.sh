@@ -25,4 +25,8 @@
           echo 9. How is the disc laid out?
           df
           echo 10. What environment variables are avaialable?
-          env
+          env > env_vars_v1.txt
+          git add env_vars_v1.txt
+          git commit -m "first version of redirected file"
+          git push
+          
