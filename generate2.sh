@@ -15,7 +15,7 @@ echo '{' > kvsk_f1.json
 first=1
 for BRANCH in 202012 202106 master
 do
-	if [[ -z "${first}" ]]; then
+	if [ -z "${first}" ]; then
 		echo ',' >> kvsk_f1.json
 	fi
 	first=''
