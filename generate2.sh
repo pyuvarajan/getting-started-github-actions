@@ -6,7 +6,7 @@ DEFID_BRCM="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/definitio
 DEFID_MLNX="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/definitions?name=Azure.sonic-buildimage.official.mellanox' | jq -r '.value[0].id')"
 DEFID_VS="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/definitions?name=Azure.sonic-buildimage.official.vs' | jq -r '.value[0].id')"
 
-echo '{' >> kvsk_f1.json
+echo '{' > kvsk_f1.json
 first=1
 for BRANCH in 202012 202106 master
 do
