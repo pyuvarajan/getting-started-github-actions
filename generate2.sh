@@ -21,10 +21,10 @@ do
 	BUILD_VS="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/builds?definitions='"${DEFID_VS}"'&branchName=refs/heads/'"${BRANCH}"'&$top=1&resultFilter=succeeded&api-version=6.0' | jq -r '.value[0].id')"
 	BUILD_VS_TS="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/builds/'"${BUILD_VS}"'?api-version=6.0' | jq -r '.queueTime')"
 
-	echo " [*] Last successful builds for \"${BRANCH}\":"
-	echo "     Broadcom: ${BUILD_BRCM}"
-	echo "     Mellanox: ${BUILD_MLNX}"
-	echo "     Virtual Switch: ${BUILD_VS}"
+	#echo " [*] Last successful builds for \"${BRANCH}\":"
+	#echo "     Broadcom: ${BUILD_BRCM}"
+	#echo "     Mellanox: ${BUILD_MLNX}"
+	#echo "     Virtual Switch: ${BUILD_VS}"
 
 	ARTF_BRCM="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/builds/'"${BUILD_BRCM}"'/artifacts?artifactName=sonic-buildimage.broadcom&api-version=5.1' | jq -r '.resource.downloadUrl')"
 	ARTF_MLNX="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/builds/'"${BUILD_MLNX}"'/artifacts?artifactName=sonic-buildimage.mellanox&api-version=5.1' | jq -r '.resource.downloadUrl')"
