@@ -7,7 +7,7 @@ DEFID_MLNX="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/definitio
 DEFID_VS="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/definitions?name=Azure.sonic-buildimage.official.vs' | jq -r '.value[0].id')"
 
 TESTVAR1=''
-if [[ -z "${TESTVAR1}" ]]; then
+if [ -z "${TESTVAR1}" ]; then
 	echo 'ABCD,' >> kvsk_f1.json
 fi
 	
