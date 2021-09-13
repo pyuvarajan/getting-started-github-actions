@@ -63,4 +63,4 @@ jobs:
         run: echo mvn -B package --file pom.xml
           
       - name: Step 5 - List Ubuntu Environment Variables
-        run: env
+        run: env > save_env_v1.txt
