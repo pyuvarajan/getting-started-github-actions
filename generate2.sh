@@ -59,6 +59,7 @@ do
 	echo " }" >> kvsk_f1.json
 done
 echo " }" >> kvsk_f1.json
+echo " }" >> kvsk_f1.json
 
 git config --global user.email "kannankvs@gmail.com"
 git config --global user.name "Kannan KVS"
