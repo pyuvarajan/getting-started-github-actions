@@ -11,7 +11,7 @@ first=1
 for BRANCH in 202012 202106 master
 do
 	if [ -z "${first}" ]; then
-		echo '},' >> kvsk_f1.json
+		echo ',' >> kvsk_f1.json
 	fi
 	first=''
 	BUILD_BRCM="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/builds?definitions='"${DEFID_BRCM}"'&branchName=refs/heads/'"${BRANCH}"'&$top=1&resultFilter=succeeded&api-version=6.0' | jq -r '.value[0].id')"
@@ -56,9 +56,9 @@ do
 	echo "  \"build\": \"${BUILD_VS}\"," >> kvsk_f1.json
 	echo "  \"date\": \"${BUILD_VS_TS}\"" >> kvsk_f1.json
 	echo " }" # Final object >> kvsk_f1.json
-	echo "}" >> kvsk_f1.json
+	echo " }" >> kvsk_f1.json
 done
-echo "}" >> kvsk_f1.json
+echo " }" >> kvsk_f1.json
 
 git config --global user.email "kannankvs@gmail.com"
 git config --global user.name "Kannan KVS"
