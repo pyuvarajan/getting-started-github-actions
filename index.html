@@ -8,7 +8,7 @@
 <style>
 .list-group {
   width: auto;
-  max-width: 760px;
+  max-width: 1200px;
   margin: 4rem auto;
   margin-top:0;
   margin-bottom:0;
@@ -59,13 +59,29 @@ const timeAgo = (date) => {
 <img class="d-block mx-auto mb-4" src="https://azure.github.io/SONiC/pdf/newsletters/newsletter_images/sonic-logo_40percentage.png" alt="SONiC logo">
 <div class="col-lg-6 mx-auto">
 <p class="lead mb-4">
-An unofficial automatic index of the latest SONiC installation images.
+<td style=" text-align: left;"><strong>Index of the latest SONiC installation images.</strong> </td>
 </p>
 </div>
 </div>
-</div>
+
 <div class="list-group" id="builds">
-            <table style="width:900px" border="2" align="center" >
+            <table style="width:1200px" border="2" align="center" >
+    <section id="mu-page-breadcrumb">
+        <div class="container">
+            <div class="row">
+				<div style="text-align: center;">
+					<div style="background-color: lightblue;  " >
+						<div class="col-md-12">
+							<div class="mu-page-breadcrumb-area">
+								<h2> SONiC Platform Builds </h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>
+
 </tr>
 <tr>
 <td style="width: 20%; text-align: center; padding-left: 0.5em; background-color: lightblue; height: 45px; align: center;">
@@ -186,12 +202,14 @@ An unofficial automatic index of the latest SONiC installation images.
 <div class="px-4 text-center">
 <div class="col-lg-6 mx-auto">
 <p class="lead mt-4">
-Want to use SONiC in GNS3? Try <a href="download-gns3a.sh">this download script</a>.
+
 </p>
 <p class="mt-4">
+<a href="https://sonic-build.azurewebsites.net/ui/sonic/Pipelines">click here</a></span></td> for previous builds <br>
 Contact: <a href="https://github.com/bluecmd/sonic-builds">GitHub</a>
+
 </p>
-<i>SONiC and the SONiC logo are trademarks of the Microsoft group of companies</i>
+
 </p>
 </div>
 </div>
