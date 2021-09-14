@@ -1,0 +1,258 @@
+
+
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/luxon@2.0.1/build/global/luxon.min.js" integrity="sha256-BdqBGuaawDzMtW2Wn9ISUuYKUY/A7d5NVcj6Ix3jwv8=" crossorigin="anonymous"></script>
+<title>SONiC installation images</title>
+<style>
+.list-group {
+  width: auto;
+  max-width: 760px;
+  margin: 4rem auto;
+  margin-top:0;
+  margin-bottom:0;
+}
+</style>
+    <style>
+        table,
+        th,
+        td {
+            border: 2px solid blue;
+            text-align: center;
+			width:1100px
+        }
+        
+        th,
+        td {
+            padding: 10px;
+            background-color: none;
+        }
+    </style>	
+
+<link rel="icon" type="image/png" href="sonic-ico.png">
+<script>
+// From https://github.com/moment/luxon/issues/274
+const units = [
+  'year',
+  'month',
+  'week',
+  'day',
+  'hour',
+  'minute',
+  'second',
+];
+const timeAgo = (date) => {
+  let dateTime = luxon.DateTime.fromISO(date)
+  const diff = dateTime.diffNow().shiftTo(...units);
+  const unit = units.find((unit) => diff.get(unit) !== 0) || 'second';
+
+  const relativeFormatter = new Intl.RelativeTimeFormat('en', {
+    numeric: 'auto',
+  });
+  return relativeFormatter.format(Math.trunc(diff.as(unit)), unit);
+};
+</script>
+</head>
+<body>
+<div class="px-4 py-5 text-center">
+<img class="d-block mx-auto mb-4" src="sonic-ico.png" alt="SONiC logo">
+<div class="col-lg-6 mx-auto">
+<p class="lead mb-4">
+An unofficial automatic index of the latest SONiC installation images.
+</p>
+</div>
+</div>
+</div>
+<div class="list-group" id="builds">
+            <table style="width:1100px" border="2" align="center" >
+</tr>
+<tr>
+<td style="width: 30%; text-align: center; padding-left: 0.5em; background-color: lightblue; height: 45px; align: center;">
+<span style="letter-spacing: 0.15em;  font-weight: bold; font-size: calc(11px + 0.6vw); ">Branch</span></td>
+<td style="background-color: lightblue; padding-left: 0.5em; height: 45px;" >
+ <span style="letter-spacing: 0.15em;  font-weight: bold; font-size: calc(11px + 0.6vw); ">Builds</span>
+</td>
+<td style="background-color: lightblue; padding-left: 0.5em; height: 45px;" colspan="3">
+ <span style="letter-spacing: 0.15em;  font-weight: bold; font-size: calc(11px + 0.6vw); ">Timelines</span>
+</td>
+
+</tr>
+<p >
+<tr style="padding: 0.2em;">
+<td  style="vertical-align: center; color: black; line-height: 2em;" rowspan="5" >
+                  <strong>
+                     <li>Branch 202012</li>
+                  </strong>
+               </td>
+</p>
+<td  style="vertical-align: top; text-align: left; color: black; line-height: 2em;" rowspan="5" >
+                  <strong>
+                     <ul style="list-style-type:square;">
+                        <li><a href="https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzM2MTE1L2FydGlmYWN0TmFtZS9zb25pYy1idWlsZGltYWdlLmJyb2FkY29t0/content?format=file&subpath=/target/sonic-broadcom.bin">
+                     sonic-broadcom.bin</a> </li>
+                        <li><a href="https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzM2MTE1L2FydGlmYWN0TmFtZS9zb25pYy1idWlsZGltYWdlLmJyb2FkY29t0/content?format=file&subpath=/target/sonic-broadcom.bin">
+                     sonic-aboot-broadcom.swi</a> </li>
+						<li><a href="https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzM2MTE1L2FydGlmYWN0TmFtZS9zb25pYy1idWlsZGltYWdlLmJyb2FkY29t0/content?format=file&subpath=/target/sonic-broadcom.bin">
+                     sonic-mellanox.bin</a> </li>
+						<li><a href="https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzM2MTE1L2FydGlmYWN0TmFtZS9zb25pYy1idWlsZGltYWdlLmJyb2FkY29t0/content?format=file&subpath=/target/sonic-broadcom.bin">
+                     sonic-vs.img.gz</a> </li>
+                     </ul>
+                  </strong>
+               </td>
+<td  style="vertical-align: top; text-align: left; color: black; line-height: 2em;" rowspan="5" >
+                  <strong>
+                     <ul style="list-style-type:square;">
+                        <li><a href="https://dev.azure.com/mssonic/build/_build/results?buildId=36115&view=results">2 hours ago</a></li>
+                        <li><a href="https://dev.azure.com/mssonic/build/_build/results?buildId=36115&view=results">3 hours ago</a></li>
+						<li><a href="https://dev.azure.com/mssonic/build/_build/results?buildId=36115&view=results">4 hours ago</a></li>
+						<li><a href="https://dev.azure.com/mssonic/build/_build/results?buildId=36115&view=results">5 hours ago</a></li>
+                     </ul>
+                  </strong>
+               </td>		
+</div>
+
+
+<div class="list-group" id="builds">
+            <table style="width:1100px" border="2" align="center" >
+</tr>
+<tr>
+<td style="width: 30%; text-align: center; padding-left: 0.5em; background-color: lightblue; height: 45px; align: center;">
+<span style="letter-spacing: 0.15em;  font-weight: bold; font-size: calc(11px + 0.6vw); ">Branch</span></td>
+<td style="background-color: lightblue; padding-left: 0.5em; height: 45px;" >
+ <span style="letter-spacing: 0.15em;  font-weight: bold; font-size: calc(11px + 0.6vw); ">Builds</span>
+</td>
+<td style="background-color: lightblue; padding-left: 0.5em; height: 45px;" colspan="3">
+ <span style="letter-spacing: 0.15em;  font-weight: bold; font-size: calc(11px + 0.6vw); ">Timelines</span>
+</td>
+
+</tr>
+<p >
+<tr style="padding: 0.2em;">
+<td  style="vertical-align: center; color: black; line-height: 2em;" rowspan="5" >
+                  <strong>
+                     <li>Branch 202106</li>
+                  </strong>
+               </td>
+</p>
+<td  style="vertical-align: top; text-align: left; color: black; line-height: 2em;" rowspan="5" >
+                  <strong>
+                     <ul style="list-style-type:square;">
+                        <li><a href="https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzM2MTE1L2FydGlmYWN0TmFtZS9zb25pYy1idWlsZGltYWdlLmJyb2FkY29t0/content?format=file&subpath=/target/sonic-broadcom.bin">
+                     sonic-broadcom.bin</a> </li>
+                        <li><a href="https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzM2MTE1L2FydGlmYWN0TmFtZS9zb25pYy1idWlsZGltYWdlLmJyb2FkY29t0/content?format=file&subpath=/target/sonic-broadcom.bin">
+                     sonic-aboot-broadcom.swi</a> </li>
+						<li><a href="https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzM2MTE1L2FydGlmYWN0TmFtZS9zb25pYy1idWlsZGltYWdlLmJyb2FkY29t0/content?format=file&subpath=/target/sonic-broadcom.bin">
+                     sonic-mellanox.bin</a> </li>
+						<li><a href="https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzM2MTE1L2FydGlmYWN0TmFtZS9zb25pYy1idWlsZGltYWdlLmJyb2FkY29t0/content?format=file&subpath=/target/sonic-broadcom.bin">
+                     sonic-vs.img.gz</a> </li>
+                     </ul>
+                  </strong>
+               </td>
+<td  style="vertical-align: top; text-align: left; color: black; line-height: 2em;" rowspan="5" >
+                  <strong>
+                     <ul style="list-style-type:square;">
+                        <li><a href="https://dev.azure.com/mssonic/build/_build/results?buildId=36115&view=results">2 hours ago</a></li>
+                        <li><a href="https://dev.azure.com/mssonic/build/_build/results?buildId=36115&view=results">3 hours ago</a></li>
+						<li><a href="https://dev.azure.com/mssonic/build/_build/results?buildId=36115&view=results">4 hours ago</a></li>
+						<li><a href="https://dev.azure.com/mssonic/build/_build/results?buildId=36115&view=results">5 hours ago</a></li>
+                     </ul>
+                  </strong>
+               </td>		
+</div>
+
+<div class="list-group" id="builds">
+            <table style="width:1100px" border="2" align="center" >
+</tr>
+<tr>
+<td style="width: 30%; text-align: center; padding-left: 0.5em; background-color: lightblue; height: 45px; align: center;">
+<span style="letter-spacing: 0.15em;  font-weight: bold; font-size: calc(11px + 0.6vw); ">Branch</span></td>
+<td style="background-color: lightblue; padding-left: 0.5em; height: 45px;" >
+ <span style="letter-spacing: 0.15em;  font-weight: bold; font-size: calc(11px + 0.6vw); ">Builds</span>
+</td>
+<td style="background-color: lightblue; padding-left: 0.5em; height: 45px;" colspan="3">
+ <span style="letter-spacing: 0.15em;  font-weight: bold; font-size: calc(11px + 0.6vw); ">Timelines</span>
+</td>
+
+</tr>
+<p >
+<tr style="padding: 0.2em;">
+<td  style="vertical-align: center; color: black; line-height: 2em;" rowspan="5" >
+                  <strong>
+                     <li>Branch Master</li>
+                  </strong>
+               </td>
+</p>
+<td  style="vertical-align: top; text-align: left; color: black; line-height: 2em;" rowspan="5" >
+                  <strong>
+                     <ul style="list-style-type:square;">
+                        <li><a href="https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzM2MTE1L2FydGlmYWN0TmFtZS9zb25pYy1idWlsZGltYWdlLmJyb2FkY29t0/content?format=file&subpath=/target/sonic-broadcom.bin">
+                     sonic-broadcom.bin</a> </li>
+                        <li><a href="https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzM2MTE1L2FydGlmYWN0TmFtZS9zb25pYy1idWlsZGltYWdlLmJyb2FkY29t0/content?format=file&subpath=/target/sonic-broadcom.bin">
+                     sonic-aboot-broadcom.swi</a> </li>
+						<li><a href="https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzM2MTE1L2FydGlmYWN0TmFtZS9zb25pYy1idWlsZGltYWdlLmJyb2FkY29t0/content?format=file&subpath=/target/sonic-broadcom.bin">
+                     sonic-mellanox.bin</a> </li>
+						<li><a href="https://artprodcus3.artifacts.visualstudio.com/Af91412a5-a906-4990-9d7c-f697b81fc04d/be1b070f-be15-4154-aade-b1d3bfb17054/_apis/artifact/cGlwZWxpbmVhcnRpZmFjdDovL21zc29uaWMvcHJvamVjdElkL2JlMWIwNzBmLWJlMTUtNDE1NC1hYWRlLWIxZDNiZmIxNzA1NC9idWlsZElkLzM2MTE1L2FydGlmYWN0TmFtZS9zb25pYy1idWlsZGltYWdlLmJyb2FkY29t0/content?format=file&subpath=/target/sonic-broadcom.bin">
+                     sonic-vs.img.gz</a> </li>
+                     </ul>
+                  </strong>
+               </td>
+<td  style="vertical-align: top; text-align: left; color: black; line-height: 2em;" rowspan="5" >
+                  <strong>
+                     <ul style="list-style-type:square;">
+                        <li><a href="https://dev.azure.com/mssonic/build/_build/results?buildId=36115&view=results">2 hours ago</a></li>
+                        <li><a href="https://dev.azure.com/mssonic/build/_build/results?buildId=36115&view=results">3 hours ago</a></li>
+						<li><a href="https://dev.azure.com/mssonic/build/_build/results?buildId=36115&view=results">4 hours ago</a></li>
+						<li><a href="https://dev.azure.com/mssonic/build/_build/results?buildId=36115&view=results">5 hours ago</a></li>
+                     </ul>
+                  </strong>
+               </td>		
+</div>
+
+<div class="list-group" id="builds">
+            <table style="width:1100px" border="2" align="center" >
+</div>
+
+<div class="px-4 text-center">
+<div class="col-lg-6 mx-auto">
+<p class="lead mt-4">
+Want to use SONiC in GNS3? Try <a href="download-gns3a.sh">this download script</a>.
+</p>
+<p class="mt-4">
+Contact: <a href="https://github.com/bluecmd/sonic-builds">GitHub</a>
+</p>
+<i>SONiC and the SONiC logo are trademarks of the Microsoft group of companies</i>
+</p>
+</div>
+</div>
+</div>
+<script>
+fetch('kvsk_f1.json')
+    .then(res => res.json())
+    .then((out) => {
+	 let d = document.getElementById('builds');
+	 for (var key in out) {
+	    content = ''
+	    for (var file in out[key]) {
+		    let ta = timeAgo(out[key][file]['date']);
+		    content += '<div class="d-flex gap-2 w-100 justify-content-between">';
+		    content += '<div>';
+		    content += '<li><a href="' + out[key][file]['url'] + '">' + file + '</a></li></div><span class="opacity-25 text-nowrap"><a href="' + out[key][file]['build-url'] + '">' + ta + '</a></span>'
+		    content += '</div>';
+	    }
+	    d.innerHTML += `
+<span class="list-group-item d-flex gap-3 py-3" aria-current="true">
+<img src="package.png" alt="package" width="64" height="47" class="rounded-circle flex-shrink-0">
+<div class="d-flex gap-2 w-100 justify-content-between">
+<div class="w-100">
+<h6 class="mb-3">Branch ` + key + `</h6>
+<p class="mb-0 opacity-75"><ul>` + content + `</ul></p>
+</div>
+</div>
+</span>`;
+	 }
+}).catch(err => console.error(err));
+</script>
+
+</body>
+</html>
