@@ -19,7 +19,7 @@ first=1
 for BRANCH in 202012 202106 master
 do
 	if [ -z "${first}" ]; then
-		echo 'EFGH,IJKL' >> kvsk_f2.json
+		echo ',' >> kvsk_f2.json
 	fi
 	first=''
 	BUILD_BRCM="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/builds?definitions='"${DEFID_BRCM}"'&branchName=refs/heads/'"${BRANCH}"'&$top=1&resultFilter=succeeded&api-version=6.0' | jq -r '.value[0].id')"
@@ -142,7 +142,7 @@ do
 	echo "  \"build\": \"${BUILD_NPH}\"," >> kvsk_f2.json
 	echo "  \"date\": \"${BUILD_NPH_TS}\"" >> kvsk_f2.json
 	echo " }" >> kvsk_f2.json
-	echo "}ABCD" >> kvsk_f2.json
+	echo -n "}" >> kvsk_f2.json
 done
 echo "}" >> kvsk_f2.json
 
