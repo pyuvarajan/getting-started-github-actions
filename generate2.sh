@@ -88,55 +88,55 @@ do
 	echo "  \"build\": \"${BUILD_VS}\"," >> kvsk_f2.json
 	echo "  \"date\": \"${BUILD_VS_TS}\"" >> kvsk_f2.json
 	echo " }" # Final object >> kvsk_f2.json
-	echo " }" >> kvsk_f2.json
+	echo " }," >> kvsk_f2.json
 	echo "\"sonic-innovium.bin\": {" >> kvsk_f2.json
 	echo "  \"url\": \"$(echo "${ARTF_INNO}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-innovium.bin/')\"," >> kvsk_f2.json
 	echo "  \"build-url\": \"https://dev.azure.com/mssonic/build/_build/results?buildId=${BUILD_INNO}&view=results\"," >> kvsk_f2.json
 	echo "  \"build\": \"${BUILD_INNO}\"," >> kvsk_f2.json
 	echo "  \"date\": \"${BUILD_INNO_TS}\"" >> kvsk_f2.json
-	echo " }" >> kvsk_f2.json
+	echo " }," >> kvsk_f2.json
 	echo "\"sonic-innovium-dbg.bin\": {" >> kvsk_f2.json
 	echo "  \"url\": \"$(echo "${ARTF_INNO}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-innovium-dbg.bin/')\"," >> kvsk_f2.json
 	echo "  \"build-url\": \"https://dev.azure.com/mssonic/build/_build/results?buildId=${BUILD_INNO}&view=results\"," >> kvsk_f2.json
 	echo "  \"build\": \"${BUILD_INNO}\"," >> kvsk_f2.json
 	echo "  \"date\": \"${BUILD_INNO_TS}\"" >> kvsk_f2.json	
-	echo " }" >> kvsk_f2.json
+	echo " }," >> kvsk_f2.json
 	echo "\"sonic-barefoot.bin\": {" >> kvsk_f2.json
 	echo "  \"url\": \"$(echo "${ARTF_BFT}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-barefoot.bin/')\"," >> kvsk_f2.json
 	echo "  \"build-url\": \"https://dev.azure.com/mssonic/build/_build/results?buildId=${BUILD_BFT}&view=results\"," >> kvsk_f2.json
 	echo "  \"build\": \"${BUILD_BFT}\"," >> kvsk_f2.json
 	echo "  \"date\": \"${BUILD_BFT_TS}\"" >> kvsk_f2.json
-	echo " }" >> kvsk_f2.json
+	echo " }," >> kvsk_f2.json
 	echo "\"sonic-centec.bin\": {" >> kvsk_f2.json
 	echo "  \"url\": \"$(echo "${ARTF_CTC}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-centec.bin/')\"," >> kvsk_f2.json
 	echo "  \"build-url\": \"https://dev.azure.com/mssonic/build/_build/results?buildId=${BUILD_CTC}&view=results\"," >> kvsk_f2.json
 	echo "  \"build\": \"${BUILD_CTC}\"," >> kvsk_f2.json
 	echo "  \"date\": \"${BUILD_CTC_TS}\"" >> kvsk_f2.json
-	echo " }" >> kvsk_f2.json
+	echo " }," >> kvsk_f2.json
 	echo "\"sonic-centec-arm64.bin\": {" >> kvsk_f2.json
 	echo "  \"url\": \"$(echo "${ARTF_CTC64}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-centec-arm64.bin/')\"," >> kvsk_f2.json
 	echo "  \"build-url\": \"https://dev.azure.com/mssonic/build/_build/results?buildId=${BUILD_CTC64}&view=results\"," >> kvsk_f2.json
 	echo "  \"build\": \"${BUILD_CTC64}\"," >> kvsk_f2.json
 	echo "  \"date\": \"${BUILD_CTC64_TS}\"" >> kvsk_f2.json
-	echo " }" >> kvsk_f2.json
+	echo " }," >> kvsk_f2.json
 	echo "\"sonic-generic.bin\": {" >> kvsk_f2.json
 	echo "  \"url\": \"$(echo "${ARTF_GRC}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-generic.bin/')\"," >> kvsk_f2.json
 	echo "  \"build-url\": \"https://dev.azure.com/mssonic/build/_build/results?buildId=${BUILD_GRC}&view=results\"," >> kvsk_f2.json
 	echo "  \"build\": \"${BUILD_GRC}\"," >> kvsk_f2.json
 	echo "  \"date\": \"${BUILD_GRC_TS}\"" >> kvsk_f2.json
-	echo " }" >> kvsk_f2.json
+	echo " }," >> kvsk_f2.json
 	echo "\"sonic-generic-dbg.bin\": {" >> kvsk_f2.json
 	echo "  \"url\": \"$(echo "${ARTF_GRC}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-generic-dbg.bin/')\"," >> kvsk_f2.json
 	echo "  \"build-url\": \"https://dev.azure.com/mssonic/build/_build/results?buildId=${BUILD_GRC}&view=results\"," >> kvsk_f2.json
 	echo "  \"build\": \"${BUILD_GRC}\"," >> kvsk_f2.json
 	echo "  \"date\": \"${BUILD_GRC_TS}\"" >> kvsk_f2.json	
-	echo " }" >> kvsk_f2.json
+	echo " }," >> kvsk_f2.json
 	echo "\"sonic-marvell-armhf.bin\": {" >> kvsk_f2.json
 	echo "  \"url\": \"$(echo "${ARTF_MRV}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-marvell-armhf.bin/')\"," >> kvsk_f2.json
 	echo "  \"build-url\": \"https://dev.azure.com/mssonic/build/_build/results?buildId=${BUILD_MRV}&view=results\"," >> kvsk_f2.json
 	echo "  \"build\": \"${BUILD_MRV}\"," >> kvsk_f2.json
 	echo "  \"date\": \"${BUILD_MRV_TS}\"" >> kvsk_f2.json
-	echo " }" >> kvsk_f2.json
+	echo " }," >> kvsk_f2.json
 	echo "\"sonic-nephos.bin\": {" >> kvsk_f2.json
 	echo "  \"url\": \"$(echo "${ARTF_NPH}" | sed 's/format=zip/format=file\&subpath=\/target\/sonic-nephos.bin/')\"," >> kvsk_f2.json
 	echo "  \"build-url\": \"https://dev.azure.com/mssonic/build/_build/results?buildId=${BUILD_NPH}&view=results\"," >> kvsk_f2.json
