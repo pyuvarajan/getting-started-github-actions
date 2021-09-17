@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2 
         
       - name: Run a one-line script
-        run: sh ./github-actions-script.sh
+        run: sh ./generate3.sh
 
       - name: Run a set of commands
         run: |
