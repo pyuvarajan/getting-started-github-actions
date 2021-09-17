@@ -16,7 +16,7 @@ DEFID_NPH="$(curl -s 'https://dev.azure.com/mssonic/build/_apis/build/definition
 
 echo '{' > kvsk_f2.json
 first=1
-for BRANCH in 202012 202106 master
+for BRANCH in master 202106 202012 201911 201811
 do
 	if [ -z "${first}" ]; then
 		echo ',' >> kvsk_f2.json
