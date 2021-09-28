@@ -19,7 +19,7 @@
 		table,
 		th,
 		td{
-			width: 1100px;
+			width: 1200px;
 			text-align: center;
 			border: 2px solid blue;
 		}
@@ -36,7 +36,7 @@
 	<img class="d-block mx-auto mb-4" src="https://azure.github.io/SONiC/pdf/newsletters/newsletter_images/sonic-logo_40percentage.png" alt="SONiC logo">
 	<div class="col-lg-6 mx-auto">
 	    <p class="lead mb-4">
-		<td style=" text-align: left;"><strong>Index of the latest SONiC installation images.</strong> </td>
+		<td style=" text-align: left;"><strong>Latest successful build image in each branch</strong> </td>
 	    </p>
 	</div>
     </div>
@@ -73,7 +73,7 @@
 		</p>
 		<p class="mt-4">
 		    <a href="https://sonic-build.azurewebsites.net/ui/sonic/Pipelines">click here</a></span></td> for previous builds <br>
-		    Contact: <a href="">GitHub</a>
+		    <p>Current date and time is <span id='date-time'></span>.</p>
 
 		</p>
 
@@ -84,27 +84,41 @@
 
     <script>
 	$(document).ready(function () {
-	    $.getJSON("kvsk_f2.json", 
+	    $.getJSON("kvsk_f3.json", 
 		function(data) {
-		    console.log(data);
 		    dbs = data;
 		    branches = Object.keys(data);
 		    image_data = [];
 		    for (let i = 0; i < branches.length; i++) {
-			display_data = "<td style=\"width: 20%; text-align: center; padding-left: 0.5em; background-color: lightblue; height: 45px; align: center;\"><span style=\"letter-spacing: 0.15em;  font-weight: bold; font-size: calc(11px + 0.6vw); \">" + branches[i].toUpperCase() +"</span></td>";
+			display_data = "<td style=\" text-align: center; padding-left: 0.5em; background-color: lightblue; height: 45px; align: center;\"><span style=\"letter-spacing: 0.15em;  font-weight: bold; font-size: calc(11px + 0.6vw); \">" + branches[i].toUpperCase() +"</span></td>";
 			$("#branch").append(display_data);
 			images = Object.keys(data[branches[i]]);
 			for (let j = 0; j < images.length; j++) {
+			    image_name = images[j];
 			    image = data[branches[i]][images[j]];
-			    image_name = image['url'].split("target/")[1];
 			    image_platform = image_name.split(".")[0];
-			    platform = image_platform.split("sonic-")[1];
+			    if(image_platform.length == 1){
+				platform = ""
+			    }else{
+				platform = image_platform.split("sonic-")[1];
+				if(platform.length == 1){
+				    platform = ""
+				}
+			    }
+			    image_avail = true;
+			    image_url = image['url'];
+			    if(image_url === 'null' || image_url === ""){
+				image_avail = false;
+			    }
 			    if ( !$("#"+platform).length ){
 				platform_column = "<tr id=\""+ platform +"\"><td style=\" text-align: center; \"><strong>"+ platform.toUpperCase()+"</strong></td></tr>";
 				$("#disp_table").append(platform_column);
 			    }
+			    if (image_avail)
+				image_column ="<td style=\"text-align: center;\"><span style=\"color: #0000ff;\"><a href=\""+ image_url +"\">"+image_name+"</a></span></td>";
+			    else
+				image_column ="<td style=\"text-align: center;\"><span style=\"color: #0000ff;\">N/A</span></td>";
 
-			    image_column ="<td style=\"text-align: center;\"><span style=\"color: #0000ff;\"><a href=\""+ image['url'] +"\">"+image_name+"</a></span></td>";
 			    $("#"+platform).append(image_column);
 			}
 		    }
