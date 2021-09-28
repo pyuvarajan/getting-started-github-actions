@@ -77,7 +77,9 @@
 		<p class="mt-4">
 		    <a href="https://sonic-build.azurewebsites.net/ui/sonic/Pipelines">click here</a></span></td> for previous builds <br>
 		    <p>Date/Time: MM/DD/YYYY hh:mm<br>
-		    <?php echo(strftime("%m/%d/%Y %H:%M")); ?></p>
+		    <!--#config timefmt="%m/%d/%Y %H:%M" -->
+		    <!--#echo var="DATE_LOCAL" -->
+			</p>
 		</p>
 
 		</p>
