@@ -6,7 +6,7 @@ name: Run generate3 shell script
 # events but only for the main branch
 on:
   schedule:
-    - cron: "*/2 * * * *"
+    
   push:
     branches: [ main ]
 
